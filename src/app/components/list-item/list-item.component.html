@@ -1,0 +1,15 @@
+<li class="list-group-item">
+  <input class="form-check-input me-1" type="checkbox"
+         (change)="isDone()"
+         [id]="todo.id"
+         [value]="todo.id"
+         [attr.aria-label]="todo.content"
+         [checked]="todo.isDone"
+         [(ngModel)]="todoIsChecked"
+  >
+  <label [for]="todo.id" *ngIf="todo.isDone == false">{{todo.content}}</label>
+  <label [for]="todo.id" *ngIf="todo.isDone">
+    <del>{{todo.content}}</del>
+  </label>
+  <span class="badge rounded-pill bg-danger" (click)="gotoDetails(todo)">Edit</span>
+</li>

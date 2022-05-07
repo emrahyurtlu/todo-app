@@ -1,0 +1,4 @@
+<ul class="list-group">
+  <todo-list-item *ngFor="let todo of todos" [todo]="todo" (todoEvent)="updateTodo($event)"></todo-list-item>
+</ul>
+
